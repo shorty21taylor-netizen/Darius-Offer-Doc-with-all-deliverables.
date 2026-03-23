@@ -476,7 +476,7 @@
             </div>
         </section>
         <div class="container"><div class="divider"></div></div>
-        <section class="section">
+        <section class="section" style="position: relative; z-index: 10; margin-bottom: -128px; padding-bottom: 160px;">
             <div class="container">
                 <div class="section-header"><p class="section-label">What's Included</p><h2>The Complete Inner Circle Experience</h2></div>
                 <div class="features-grid">
@@ -494,12 +494,15 @@
             </div>
         </section>
         <!-- Inner Circle Lifestyle Section -->
-        <section style="position: relative; width: 100%; min-height: 80vh; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+        <section style="position: relative; z-index: 0; width: 100%; min-height: 80vh; display: flex; align-items: center; justify-content: center; overflow: hidden;">
             <div style="position: absolute; inset: 0; z-index: 0;">
-                <img src="lifestyle.webp" alt="" style="width: 100%; height: 100%; object-fit: cover; object-position: center 30%;">
-                <div style="position: absolute; inset: 0; background: rgba(10, 10, 10, 0.45);"></div>
-                <div style="position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.7) 100%);"></div>
-                <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10, 10, 10, 0.8) 0%, transparent 15%, transparent 85%, rgba(10, 10, 10, 0.8) 100%);"></div>
+                <img src="lifestyle.webp" alt="" style="width: 100%; height: 100%; object-fit: cover; object-position: center 15%;">
+                <!-- Red tint base layer -->
+                <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(80, 0, 0, 0.6) 0%, rgba(40, 0, 0, 0.7) 50%, rgba(20, 0, 0, 0.85) 100%);"></div>
+                <!-- Red vignette layer -->
+                <div style="position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(60, 0, 0, 0.2) 0%, rgba(30, 0, 0, 0.75) 70%, rgba(10, 0, 0, 0.9) 100%);"></div>
+                <!-- Top/bottom edge fade -->
+                <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10, 10, 10, 0.8) 0%, transparent 18%, transparent 82%, rgba(10, 10, 10, 0.85) 100%);"></div>
             </div>
             <div style="position: relative; z-index: 1; text-align: center; padding: 60px 20px; max-width: 900px; margin: 0 auto;">
                 <h2 style="font-family: 'Space Grotesk', sans-serif; font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 700; margin: 0 0 8px 0; color: #ffffff; text-shadow: 0 4px 30px rgba(0,0,0,0.8);">This Is The Lifestyle.</h2>
