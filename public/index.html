@@ -494,23 +494,25 @@
             </div>
         </section>
         <!-- Inner Circle Lifestyle Section -->
-        <section style="position: relative; z-index: 0; width: 100%; min-height: 80vh; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+        <section style="position: relative; z-index: 0; width: 100%; min-height: 95vh; display: flex; align-items: center; justify-content: center; overflow: hidden;">
             <div style="position: absolute; inset: 0; z-index: 0;">
                 <img src="lifestyle.webp" alt="" style="width: 100%; height: 100%; object-fit: cover; object-position: center 15%;">
-                <!-- Red tint base layer -->
-                <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(80, 0, 0, 0.6) 0%, rgba(40, 0, 0, 0.7) 50%, rgba(20, 0, 0, 0.85) 100%);"></div>
-                <!-- Red vignette layer -->
-                <div style="position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(60, 0, 0, 0.2) 0%, rgba(30, 0, 0, 0.75) 70%, rgba(10, 0, 0, 0.9) 100%);"></div>
-                <!-- Top/bottom edge fade -->
-                <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10, 10, 10, 0.8) 0%, transparent 18%, transparent 82%, rgba(10, 10, 10, 0.85) 100%);"></div>
+                <!-- Red tint base layer — reduced opacity -->
+                <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(60, 0, 0, 0.4) 0%, rgba(30, 0, 0, 0.5) 50%, rgba(15, 0, 0, 0.65) 100%);"></div>
+                <!-- Red vignette layer — lighter center -->
+                <div style="position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(40, 0, 0, 0.1) 0%, rgba(20, 0, 0, 0.55) 65%, rgba(10, 0, 0, 0.8) 100%);"></div>
+                <!-- Top edge fade -->
+                <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10, 10, 10, 0.8) 0%, transparent 18%, transparent 100%);"></div>
+                <!-- Bottom fade — smooth transition into page background -->
+                <div style="position: absolute; bottom: 0; left: 0; right: 0; height: 256px; z-index: 3; background: linear-gradient(to bottom, transparent 0%, rgba(10, 10, 10, 0.4) 30%, rgba(10, 10, 10, 0.85) 70%, rgba(10, 10, 10, 1) 100%);"></div>
             </div>
-            <div style="position: relative; z-index: 1; text-align: center; padding: 60px 20px; max-width: 900px; margin: 0 auto;">
-                <h2 style="font-family: 'Space Grotesk', sans-serif; font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 700; margin: 0 0 8px 0; color: #ffffff; text-shadow: 0 4px 30px rgba(0,0,0,0.8);">This Is The Lifestyle.</h2>
-                <h2 style="font-family: 'Space Grotesk', sans-serif; font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 700; margin: 0 0 24px 0; color: #EAB308; text-shadow: 0 4px 30px rgba(0,0,0,0.8);">This Is The Inner Circle.</h2>
-                <p style="font-size: 1.125rem; color: rgba(255,255,255,0.8); max-width: 600px; margin: 0 auto; text-shadow: 0 2px 20px rgba(0,0,0,0.8); font-weight: 300; line-height: 1.6;">Join the entrepreneurs who are building generational wealth and living life on their own terms.</p>
+            <div style="position: relative; z-index: 10; text-align: center; padding: 60px 20px; max-width: 900px; margin: 0 auto;">
+                <h2 style="font-family: 'Space Grotesk', sans-serif; font-size: clamp(2.5rem, 5vw, 4.5rem); font-weight: 800; margin: 0 0 8px 0; color: #ffffff; text-shadow: 0 2px 20px rgba(0,0,0,0.7), 0 4px 40px rgba(0,0,0,0.5);">This Is The Lifestyle.</h2>
+                <h2 style="font-family: 'Space Grotesk', sans-serif; font-size: clamp(2.5rem, 5vw, 4.5rem); font-weight: 800; margin: 0 0 24px 0; color: #EAB308; text-shadow: 0 2px 20px rgba(0,0,0,0.7), 0 4px 40px rgba(0,0,0,0.5), 0 0 60px rgba(234,179,8,0.15);">This Is The Inner Circle.</h2>
+                <p style="font-size: 1.125rem; color: rgba(255,255,255,0.85); max-width: 600px; margin: 0 auto; text-shadow: 0 1px 10px rgba(0,0,0,0.5); font-weight: 300; line-height: 1.6;">Join the entrepreneurs who are building generational wealth and living life on their own terms.</p>
             </div>
         </section>
-        <section class="pricing-section">
+        <section class="pricing-section" style="margin-top: 0;">
             <div class="container">
                 <div class="section-header"><p class="section-label">Investment</p><h2>Join The Inner Circle</h2></div>
                 <div class="pricing-grid" style="max-width: 800px;">
