@@ -1,157 +1,554 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Influence2Impact - Offer Document</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      line-height: 1.6;
-      color: #333;
-      background: #f5f5f5;
-    }
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 40px 20px;
-    }
-    header {
-      text-align: center;
-      padding: 40px 0;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: white;
-      border-radius: 12px;
-      margin-bottom: 30px;
-    }
-    header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 10px;
-    }
-    header p {
-      font-size: 1.2rem;
-      opacity: 0.9;
-    }
-    .section {
-      background: white;
-      border-radius: 12px;
-      padding: 30px;
-      margin-bottom: 20px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-    }
-    .section h2 {
-      color: #667eea;
-      margin-bottom: 15px;
-      font-size: 1.5rem;
-    }
-    .section p, .section li {
-      font-size: 1.05rem;
-      margin-bottom: 10px;
-    }
-    .section ul {
-      padding-left: 20px;
-    }
-    .deliverables {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 15px;
-      margin-top: 15px;
-    }
-    .deliverable-card {
-      background: #f8f9ff;
-      border: 1px solid #e0e4ff;
-      border-radius: 8px;
-      padding: 20px;
-    }
-    .deliverable-card h3 {
-      color: #764ba2;
-      margin-bottom: 8px;
-    }
-    .cta {
-      text-align: center;
-      padding: 40px;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: white;
-      border-radius: 12px;
-    }
-    .cta h2 {
-      color: white;
-      font-size: 2rem;
-      margin-bottom: 15px;
-    }
-    .cta p {
-      font-size: 1.1rem;
-      margin-bottom: 20px;
-    }
-    .cta a {
-      display: inline-block;
-      background: white;
-      color: #667eea;
-      padding: 12px 30px;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 1.1rem;
-    }
-    .cta a:hover {
-      opacity: 0.9;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Influence2Impact | Credit & Funding Program</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-red: #E31837;
+            --primary-red-dark: #B8132C;
+            --primary-red-glow: rgba(227, 24, 55, 0.4);
+            --black: #0A0A0A;
+            --black-light: #141414;
+            --black-lighter: #1E1E1E;
+            --black-card: #161616;
+            --white: #FFFFFF;
+            --gray-100: #F5F5F5;
+            --gray-200: #E5E5E5;
+            --gray-300: #A3A3A3;
+            --gray-400: #737373;
+            --gray-500: #525252;
+            --gradient-red: linear-gradient(135deg, #E31837 0%, #FF4D6A 100%);
+            --gradient-dark: linear-gradient(180deg, #141414 0%, #0A0A0A 100%);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--black); color: var(--white); line-height: 1.6; overflow-x: hidden;
+        }
+        .bg-pattern {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none; z-index: 0; opacity: 0.03;
+            background-image: radial-gradient(circle at 25% 25%, var(--primary-red) 1px, transparent 1px),
+                radial-gradient(circle at 75% 75%, var(--primary-red) 1px, transparent 1px);
+            background-size: 60px 60px;
+        }
+        .glow-orb {
+            position: fixed; width: 600px; height: 600px; border-radius: 50%;
+            background: radial-gradient(circle, var(--primary-red-glow) 0%, transparent 70%);
+            filter: blur(80px); pointer-events: none; z-index: 0;
+            animation: float 8s ease-in-out infinite;
+        }
+        .glow-orb-1 { top: -200px; right: -200px; }
+        .glow-orb-2 { bottom: -200px; left: -200px; animation-delay: -4s; }
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(-30px, 30px) scale(1.1); }
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
+        header { padding: 32px 0; border-bottom: 1px solid rgba(255,255,255,0.06); }
+        .logo {
+            font-family: 'Space Grotesk', sans-serif; font-size: 1.75rem; font-weight: 700;
+            letter-spacing: -0.02em; display: flex; align-items: center; gap: 12px;
+        }
+        .logo-icon {
+            width: 42px; height: 42px; background: var(--gradient-red); border-radius: 10px;
+            display: flex; align-items: center; justify-content: center;
+            font-weight: 800; font-size: 1.25rem; box-shadow: 0 4px 20px var(--primary-red-glow);
+        }
+        .logo span { color: var(--primary-red); }
+        .hero { padding: 100px 0 80px; text-align: center; }
+        .badge {
+            display: inline-flex; align-items: center; gap: 8px; padding: 10px 20px;
+            background: rgba(227, 24, 55, 0.1); border: 1px solid rgba(227, 24, 55, 0.3);
+            border-radius: 100px; font-size: 0.875rem; font-weight: 600;
+            color: var(--primary-red); margin-bottom: 32px; animation: pulse 2s ease-in-out infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(227, 24, 55, 0.4); }
+            50% { box-shadow: 0 0 0 10px rgba(227, 24, 55, 0); }
+        }
+        .badge svg { width: 16px; height: 16px; }
+        h1 {
+            font-family: 'Space Grotesk', sans-serif; font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 700; line-height: 1.1; letter-spacing: -0.03em; margin-bottom: 24px;
+        }
+        h1 .highlight {
+            background: var(--gradient-red); -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent; background-clip: text;
+        }
+        .hero-subtitle { font-size: 1.25rem; color: var(--gray-300); max-width: 640px; margin: 0 auto 48px; line-height: 1.7; }
+        .hero-stats { display: flex; justify-content: center; gap: 48px; flex-wrap: wrap; }
+        .stat { text-align: center; }
+        .stat-value { font-family: 'Space Grotesk', sans-serif; font-size: 2.5rem; font-weight: 700; color: var(--white); line-height: 1; }
+        .stat-value span { color: var(--primary-red); }
+        .stat-label { font-size: 0.875rem; color: var(--gray-400); margin-top: 8px; text-transform: uppercase; letter-spacing: 0.1em; }
+        .divider { height: 1px; background: linear-gradient(90deg, transparent, rgba(227, 24, 55, 0.3), transparent); margin: 60px 0; }
+        .section { padding: 80px 0; }
+        .section-header { text-align: center; margin-bottom: 64px; }
+        .section-label { font-size: 0.8125rem; font-weight: 600; color: var(--primary-red); text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 16px; }
+        h2 { font-family: 'Space Grotesk', sans-serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; letter-spacing: -0.02em; }
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; }
+        .feature-card {
+            background: var(--black-card); border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 20px; padding: 36px; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative; overflow: hidden;
+        }
+        .feature-card::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+            background: var(--gradient-red); opacity: 0; transition: opacity 0.4s;
+        }
+        .feature-card:hover { transform: translateY(-4px); border-color: rgba(227, 24, 55, 0.2); box-shadow: 0 20px 60px -20px rgba(227, 24, 55, 0.2); }
+        .feature-card:hover::before { opacity: 1; }
+        .feature-icon {
+            width: 56px; height: 56px; background: rgba(227, 24, 55, 0.1); border-radius: 14px;
+            display: flex; align-items: center; justify-content: center; margin-bottom: 24px;
+        }
+        .feature-icon svg { width: 28px; height: 28px; color: var(--primary-red); }
+        .feature-title { font-family: 'Space Grotesk', sans-serif; font-size: 1.25rem; font-weight: 600; margin-bottom: 12px; color: var(--white); }
+        .feature-desc { color: var(--gray-400); font-size: 0.9375rem; line-height: 1.7; }
+        .pricing-section { padding: 100px 0; }
+        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 32px; max-width: 900px; margin: 0 auto; }
+        .pricing-card {
+            background: var(--black-card); border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 28px; padding: 48px 40px; position: relative;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .pricing-card.featured { border-color: var(--primary-red); box-shadow: 0 0 80px -20px var(--primary-red-glow); }
+        .pricing-card.featured::before {
+            content: 'MOST POPULAR'; position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
+            background: var(--gradient-red); color: white; font-size: 0.75rem; font-weight: 700;
+            letter-spacing: 0.1em; padding: 8px 20px; border-radius: 100px;
+        }
+        .pricing-card:hover { transform: translateY(-8px); }
+        .pricing-duration { font-size: 0.875rem; font-weight: 600; color: var(--primary-red); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 16px; }
+        .pricing-name { font-family: 'Space Grotesk', sans-serif; font-size: 1.75rem; font-weight: 700; margin-bottom: 8px; }
+        .pricing-tagline { color: var(--gray-400); font-size: 0.9375rem; margin-bottom: 32px; }
+        .pricing-amount { display: flex; align-items: baseline; gap: 4px; margin-bottom: 32px; }
+        .pricing-currency { font-size: 1.5rem; font-weight: 600; color: var(--gray-300); }
+        .pricing-value { font-family: 'Space Grotesk', sans-serif; font-size: 4rem; font-weight: 700; line-height: 1; letter-spacing: -0.02em; }
+        .pricing-range { font-size: 1rem; color: var(--gray-400); margin-left: 8px; }
+        .pricing-features { list-style: none; margin-bottom: 40px; }
+        .pricing-features li { display: flex; align-items: flex-start; gap: 14px; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.04); font-size: 0.9375rem; color: var(--gray-200); }
+        .pricing-features li:last-child { border-bottom: none; }
+        .pricing-features svg { width: 20px; height: 20px; color: var(--primary-red); flex-shrink: 0; margin-top: 2px; }
+        .cta-button {
+            display: block; width: 100%; padding: 18px 32px; background: var(--black-lighter);
+            border: 1px solid rgba(255,255,255,0.1); border-radius: 14px; color: var(--white);
+            font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1rem; font-weight: 600;
+            text-align: center; text-decoration: none; cursor: pointer; transition: all 0.3s;
+        }
+        .cta-button:hover { background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.2); }
+        .pricing-card.featured .cta-button { background: var(--gradient-red); border: none; box-shadow: 0 8px 30px -8px var(--primary-red-glow); }
+        .pricing-card.featured .cta-button:hover { transform: scale(1.02); box-shadow: 0 12px 40px -8px var(--primary-red-glow); }
+        .bonus-section { padding: 80px 0; background: linear-gradient(180deg, transparent, rgba(227, 24, 55, 0.03), transparent); }
+        .bonus-card {
+            max-width: 800px; margin: 0 auto; background: var(--black-card);
+            border: 1px solid rgba(227, 24, 55, 0.2); border-radius: 24px; padding: 48px;
+            text-align: center; position: relative; overflow: hidden;
+        }
+        .bonus-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--gradient-red); }
+        .bonus-icon { width: 72px; height: 72px; background: rgba(227, 24, 55, 0.1); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 24px; }
+        .bonus-icon svg { width: 36px; height: 36px; color: var(--primary-red); }
+        .bonus-title { font-family: 'Space Grotesk', sans-serif; font-size: 1.75rem; font-weight: 700; margin-bottom: 16px; }
+        .bonus-desc { color: var(--gray-300); font-size: 1.0625rem; line-height: 1.8; max-width: 600px; margin: 0 auto; }
+        footer { padding: 48px 0; border-top: 1px solid rgba(255,255,255,0.06); text-align: center; }
+        .footer-text { color: var(--gray-500); font-size: 0.875rem; }
+        .footer-text a { color: var(--primary-red); text-decoration: none; }
+        @media (max-width: 768px) {
+            .hero { padding: 60px 0; }
+            .hero-stats { gap: 32px; }
+            .pricing-grid { grid-template-columns: 1fr; }
+            .pricing-card { padding: 36px 28px; }
+            .bonus-card { padding: 32px 24px; }
+        }
+        .mastermind-pricing { grid-template-columns: repeat(3, 1fr); max-width: 1100px; }
+        @media (max-width: 1024px) { .mastermind-pricing { grid-template-columns: 1fr; } }
+        @media (max-width: 900px) {
+            .mentor-grid { grid-template-columns: 1fr !important; text-align: center; }
+            .mentor-grid img { max-width: 350px; margin: 0 auto; }
+            .mentor-grid .section-label { text-align: center !important; }
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
+    <div class="bg-pattern"></div>
+    <div class="glow-orb glow-orb-1"></div>
+    <div class="glow-orb glow-orb-2"></div>
     <header>
-      <h1>Influence2Impact</h1>
-      <p>Your Complete Offer Document &amp; Deliverables</p>
+        <div class="container">
+            <div class="logo">
+                <div class="logo-icon">I2I</div>
+                Influence<span>2</span>Impact
+            </div>
+        </div>
     </header>
-
-    <div class="section">
-      <h2>About This Offer</h2>
-      <p>Welcome to the Influence2Impact offer document. This page outlines all deliverables, services, and value included in your package.</p>
-    </div>
-
-    <div class="section">
-      <h2>What You Get</h2>
-      <div class="deliverables">
-        <div class="deliverable-card">
-          <h3>Strategy Blueprint</h3>
-          <p>A comprehensive strategy tailored to your goals and audience.</p>
+    <main>
+        <!-- FUND2GROW SAAS SECTION -->
+        <section class="hero">
+            <div class="container">
+                <div class="badge" style="background: rgba(0, 200, 150, 0.1); border-color: rgba(0, 200, 150, 0.3); color: #00C896;">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                    SaaS Platform
+                </div>
+                <h1>Scale Your Funding Business<br><span class="highlight">With Precision</span></h1>
+                <p class="hero-subtitle">The all-in-one CRM and automation platform built for funding professionals. Manage clients, automate applications, and grow your business on autopilot.</p>
+                <div class="hero-stats">
+                    <div class="stat"><div class="stat-value"><span>Auto</span></div><div class="stat-label">Apply System</div></div>
+                    <div class="stat"><div class="stat-value">CRM</div><div class="stat-label">Client Dashboard</div></div>
+                    <div class="stat"><div class="stat-value"><span>24/7</span></div><div class="stat-label">Automation</div></div>
+                </div>
+            </div>
+        </section>
+        <div class="container"><div class="divider"></div></div>
+        <section class="pricing-section" style="padding: 60px 0 100px;">
+            <div class="container">
+                <div class="section-header">
+                    <p class="section-label">Choose Your Plan</p>
+                    <h2>Fund2Grow.ai</h2>
+                </div>
+                <div class="pricing-grid" style="max-width: 850px;">
+                    <div class="pricing-card">
+                        <p class="pricing-duration" style="color: #00C896;">Starter</p>
+                        <h3 class="pricing-name">Solo Funder</h3>
+                        <p class="pricing-tagline">Ideal for new or solo funders managing their first clients</p>
+                        <div class="pricing-amount"><span class="pricing-currency">$</span><span class="pricing-value">97</span><span class="pricing-range">/month</span></div>
+                        <ul class="pricing-features">
+                            <li><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#00C896" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>Client CRM Dashboard (Up to 6 Clients)</li>
+                            <li><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#00C896" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>Up to 15 Auto Applies</li>
+                            <li><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#00C896" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>Funding Readiness Score</li>
+                            <li style="color: var(--gray-500);"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" style="color: var(--gray-600);"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>Document Vault</li>
+                            <li style="color: var(--gray-500);"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" style="color: var(--gray-600);"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>Support</li>
+                            <li style="color: var(--gray-500);"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" style="color: var(--gray-600);"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>Branded Client Portal</li>
+                            <li style="color: var(--gray-500);"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" style="color: var(--gray-600);"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>Team Access</li>
+                        </ul>
+                        <a href="http://www.fund2grow.ai/" target="_blank" class="cta-button" style="text-decoration: none;">Get Started</a>
+                    </div>
+                    <div class="pricing-card featured" style="border-color: #00C896; box-shadow: 0 0 80px -20px rgba(0, 200, 150, 0.3);">
+                        <p class="pricing-duration" style="color: #00C896;">Scale</p>
+                        <h3 class="pricing-name">Growth Mode</h3>
+                        <p class="pricing-tagline">Built for active funding businesses managing multiple clients</p>
+                        <div class="pricing-amount"><span class="pricing-currency">$</span><span class="pricing-value">197</span><span class="pricing-range">/month</span></div>
+                        <ul class="pricing-features">
+                            <li><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#00C896" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>Client CRM Dashboard (10+ Clients)</li>
+                            <li><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#00C896" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>Up to 30+ Auto Applies</li>
+                            <li><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#00C896" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>Funding Readiness Score</li>
+                            <li><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#00C896" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>Document Vault</li>
+                            <li><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#00C896" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>Priority Support</li>
+                            <li><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#00C896" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>Branded Client Portal</li>
+                            <li><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#00C896" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>Team Access</li>
+                        </ul>
+                        <a href="http://www.fund2grow.ai/" target="_blank" class="cta-button" style="background: linear-gradient(135deg, #00C896 0%, #00A67E 100%); text-decoration: none;">Get Started</a>
+                    </div>
+                </div>
+                <p style="text-align: center; color: var(--gray-400); margin-top: 32px; font-size: 0.9375rem;">Automate your funding business and scale without the headaches.</p>
+            </div>
+        </section>
+        <!-- CREDIT & FUNDING SECTION -->
+        <div class="container"><div class="divider" style="margin: 80px 0;"></div></div>
+        <section class="hero">
+            <div class="container">
+                <div class="badge">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+                    Credit & Business Funding Program
+                </div>
+                <h1>Get Access To Up To<br><span class="highlight">$150,000+ In Funding</span></h1>
+                <p class="hero-subtitle">Fix your personal credit, establish your business entity, and unlock the capital you need to scale — all with hands-on coaching and a proven system.</p>
+                <div class="hero-stats">
+                    <div class="stat"><div class="stat-value"><span>1:1</span></div><div class="stat-label">Dedicated Coach</div></div>
+                    <div class="stat"><div class="stat-value">Bi-Weekly</div><div class="stat-label">Calls with Darius</div></div>
+                    <div class="stat"><div class="stat-value"><span>$150K</span>+</div><div class="stat-label">Funding Potential</div></div>
+                </div>
+            </div>
+        </section>
+        <div class="container"><div class="divider"></div></div>
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <p class="section-label">What's Included</p>
+                    <h2>Everything You Need To Get Funded</h2>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg></div>
+                        <h3 class="feature-title">Credit Structuring Guidance</h3>
+                        <p class="feature-desc">We don't do done-for-you credit repair and our program doesn't focus on credit — however, we'll give you pointers and guidance on how to structure your credit for business funding approval.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></svg></div>
+                        <h3 class="feature-title">Business Entity Setup</h3>
+                        <p class="feature-desc">Establish your business entity with all the proper documentation lenders want to see for maximum funding approval.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" /></svg></div>
+                        <h3 class="feature-title">Bi-Weekly Calls with Darius</h3>
+                        <p class="feature-desc">Get direct access to Darius on bi-weekly group calls. Ask questions, get guidance, and stay on track to funding.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /></svg></div>
+                        <h3 class="feature-title">Dedicated 1-on-1 Coach</h3>
+                        <p class="feature-desc">Your personal coach will audit your situation, walk you through the funding process, and help you secure business funding step by step.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg></div>
+                        <h3 class="feature-title">Funding Application Support</h3>
+                        <p class="feature-desc">We guide you through every funding application, ensuring you have the best chance of approval with each lender.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg></div>
+                        <h3 class="feature-title">Dispute Letter Templates</h3>
+                        <p class="feature-desc">Access proven dispute letter templates and learn exactly what to send to credit bureaus to remove negative items.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="pricing-section">
+            <div class="container">
+                <div class="section-header">
+                    <p class="section-label">Choose Your Path</p>
+                    <h2>Investment Options</h2>
+                </div>
+                <div class="pricing-grid">
+                    <div class="pricing-card">
+                        <p class="pricing-duration">3-Month Program</p>
+                        <h3 class="pricing-name">Accelerator</h3>
+                        <p class="pricing-tagline">Fast-track your funding journey</p>
+                        <div class="pricing-amount"><span class="pricing-currency">$</span><span class="pricing-value">3,500</span></div>
+                        <ul class="pricing-features">
+                            <li><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>Credit structuring guidance</li>
+                            <li><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>Business entity establishment</li>
+                            <li><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>Bi-weekly calls with Darius</li>
+                            <li><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>Your own 1-on-1 coach</li>
+                            <li><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>Funding application support</li>
+                            <li><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>Bonus: Funding business training</li>
+                        </ul>
+                        <a href="https://www.fanbasis.com/agency-checkout/Dariusbenders/PZRW" target="_blank" class="cta-button" style="text-decoration: none;">Get Started</a>
+                    </div>
+                    <div class="pricing-card featured">
+                        <p class="pricing-duration">6-Month Program</p>
+                        <h3 class="pricing-name">Mastery</h3>
+                        <p class="pricing-tagline">Complete transformation & ongoing support</p>
+                        <div class="pricing-amount"><span class="pricing-currency">$</span><span class="pricing-value">6,500</span><span class="pricing-range">– $8,500</span></div>
+                        <ul class="pricing-features">
+                            <li><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>Everything in Accelerator</li>
+                            <li><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>Extended 6-month support window</li>
+                            <li><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>More time to build credit foundation</li>
+                            <li><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>Multiple funding round support</li>
+                            <li><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>Deeper business audit & strategy</li>
+                            <li><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>Bonus: Funding business training</li>
+                        </ul>
+                        <a href="https://www.fanbasis.com/agency-checkout/Dariusbenders/p87y" target="_blank" class="cta-button" style="text-decoration: none;">Get Started</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="bonus-section">
+            <div class="container">
+                <div class="bonus-card">
+                    <div class="bonus-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7" /></svg></div>
+                    <h3 class="bonus-title">Bonus: Launch Your Own Funding Business</h3>
+                    <p class="bonus-desc">We'll show you how to launch a low-barrier online business directly from your social media using our done-for-you business funding model. Help other business owners get funded and earn <strong style="color: var(--primary-red);">10% on the backend</strong> of every deal you close.</p>
+                </div>
+            </div>
+        </section>
+        <!-- DIGITAL MASTERMIND SECTION -->
+        <div class="container"><div class="divider" style="margin: 120px 0; height: 2px;"></div></div>
+        <section class="hero" id="mastermind" style="padding: 60px 0 80px;">
+            <div class="container">
+                <div class="badge">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
+                    Digital Mastermind
+                </div>
+                <h1>Scale to <span class="highlight">Multiple 5-Figures/Week</span><br>With Webinar Selling</h1>
+                <p class="hero-subtitle">Eliminate countless sales calls, sell one-to-many on virtual webinars, and book your team with qualified, HOT leads ready to buy. The fastest path to scaling coaching, consulting, and service-based offers.</p>
+                <div class="hero-stats">
+                    <div class="stat"><div class="stat-value"><span>1:Many</span></div><div class="stat-label">Webinar Sales</div></div>
+                    <div class="stat"><div class="stat-value">DFY</div><div class="stat-label">Funnel Build</div></div>
+                    <div class="stat"><div class="stat-value"><span>5-Fig</span>+</div><div class="stat-label">Weekly Potential</div></div>
+                </div>
+            </div>
+        </section>
+        <div class="container"><div class="divider"></div></div>
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <p class="section-label">What You'll Master</p>
+                    <h2>The Complete Digital Scaling System</h2>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card"><div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" /></svg></div><h3 class="feature-title">Launch High-Ticket Offers</h3><p class="feature-desc">Learn how to create and sell coaching, consulting, and mentorship products that command premium prices and attract serious buyers.</p></div>
+                    <div class="feature-card"><div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg></div><h3 class="feature-title">Webinar Selling Mastery</h3><p class="feature-desc">Sell one-to-many and eliminate draining 1:1 sales calls. Fill your calendar with qualified, HOT leads who are ready to buy before they even get on a call.</p></div>
+                    <div class="feature-card"><div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" /></svg></div><h3 class="feature-title">Leverage OPA (Other People's Audiences)</h3><p class="feature-desc">Tap into established audiences to rapidly grow your reach without starting from zero. Strategic partnerships that accelerate your growth.</p></div>
+                    <div class="feature-card"><div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M7 4v16M17 4v16M3 8h4m10 0h4M3 12h18M3 16h4m10 0h4M4 20h16a1 1 0 001-1V5a1 1 0 00-1-1H4a1 1 0 00-1 1v14a1 1 0 001 1z" /></svg></div><h3 class="feature-title">Organic Traffic (IG & YouTube)</h3><p class="feature-desc">Master content that converts on Instagram and YouTube. Get qualified prospects sliding into your DMs ready to learn more about your offers.</p></div>
+                    <div class="feature-card"><div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z" /><path stroke-linecap="round" stroke-linejoin="round" d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z" /></svg></div><h3 class="feature-title">Paid Traffic & Ads</h3><p class="feature-desc">Learn how to run profitable ad campaigns that drive targeted traffic to your webinar funnels and scale your reach on demand.</p></div>
+                    <div class="feature-card"><div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" /></svg></div><h3 class="feature-title">DFY Webinar Funnel Build</h3><p class="feature-desc">We build out your complete webinar funnel for you — landing pages, email sequences, and all the tech setup handled so you can focus on selling.</p></div>
+                </div>
+            </div>
+        </section>
+        <section class="pricing-section">
+            <div class="container">
+                <div class="section-header"><p class="section-label">Investment Options</p><h2>Choose Your Level</h2></div>
+                <div class="pricing-grid mastermind-pricing">
+                    <div class="pricing-card">
+                        <p class="pricing-duration">Done-For-You Only</p><h3 class="pricing-name">Funnel Build</h3><p class="pricing-tagline">Just the funnel, no coaching</p>
+                        <div class="pricing-amount"><span class="pricing-currency">$</span><span class="pricing-value">5K</span></div>
+                        <ul class="pricing-features">
+                            <li><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>Complete webinar funnel build</li>
+                            <li><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>Landing page setup</li>
+                            <li><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>Email sequence integration</li>
+                            <li><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>Full tech setup & handoff</li>
+                            <li style="color: var(--gray-500);"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" style="color: var(--gray-600);"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>No coaching included</li>
+                            <li style="color: var(--gray-500);"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" style="color: var(--gray-600);"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>No community access</li>
+                        </ul>
+                        <a href="https://www.fanbasis.com/agency-checkout/Dariusbenders/W72v" target="_blank" class="cta-button" style="text-decoration: none;">Get Your Funnel</a>
+                    </div>
+                    <div class="pricing-card featured">
+                        <p class="pricing-duration">Pay In Full</p><h3 class="pricing-name">Digital Mastermind</h3><p class="pricing-tagline">Full coaching + DFY funnel</p>
+                        <div class="pricing-amount"><span class="pricing-currency">$</span><span class="pricing-value">15K</span></div>
+                        <ul class="pricing-features">
+                            <li><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>1-on-1 coaching calls</li>
+                            <li><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>Group coaching calls</li>
+                            <li><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>Private community access</li>
+                            <li><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>DFY webinar funnel build</li>
+                            <li><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>Content scripts & templates</li>
+                            <li><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>Full funnel tech setup</li>
+                        </ul>
+                        <a href="https://www.fanbasis.com/agency-checkout/Dariusbenders/Qx89" target="_blank" class="cta-button" style="text-decoration: none;">Join The Mastermind</a>
+                    </div>
+                    <div class="pricing-card">
+                        <p class="pricing-duration">Two-Pay Option</p><h3 class="pricing-name">Digital Mastermind</h3><p class="pricing-tagline">Split into 2 payments</p>
+                        <div class="pricing-amount"><span class="pricing-currency">$</span><span class="pricing-value">18K</span></div>
+                        <ul class="pricing-features">
+                            <li><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>1-on-1 coaching calls</li>
+                            <li><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>Group coaching calls</li>
+                            <li><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>Private community access</li>
+                            <li><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>DFY webinar funnel build</li>
+                            <li><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>Content scripts & templates</li>
+                            <li><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>Full funnel tech setup</li>
+                        </ul>
+                        <a href="https://www.fanbasis.com/agency-checkout/Dariusbenders/xn9P" target="_blank" class="cta-button" style="text-decoration: none;">Join The Mastermind</a>
+                    </div>
+                </div>
+                <p style="text-align: center; color: var(--gray-400); margin-top: 32px; font-size: 0.9375rem;">Perfect for coaches, consultants, service providers, and anyone running a funding or credit repair business.</p>
+            </div>
+        </section>
+        <!-- INNER CIRCLE SECTION -->
+        <div class="container"><div class="divider" style="margin: 120px 0; height: 2px;"></div></div>
+        <section class="hero" id="inner-circle" style="padding: 60px 0 80px;">
+            <div class="container">
+                <div class="badge" style="background: rgba(255, 215, 0, 0.1); border-color: rgba(255, 215, 0, 0.3); color: #FFD700;">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" /></svg>
+                    Flagship Program
+                </div>
+                <h1>The <span class="highlight">Inner Circle</span></h1>
+                <p class="hero-subtitle">Partner with Darius and learn how to run 5-day virtual events that scale to <strong style="color: var(--primary-red);">$100K+ cash collected in a single day</strong>. This is the ultimate high-level mastermind for serious entrepreneurs ready to dominate.</p>
+                <div class="hero-stats">
+                    <div class="stat"><div class="stat-value"><span>$100K</span>+</div><div class="stat-label">Single Day Potential</div></div>
+                    <div class="stat"><div class="stat-value">1 Year</div><div class="stat-label">Elite Access</div></div>
+                    <div class="stat"><div class="stat-value"><span>4</span> Live</div><div class="stat-label">In-Person Masterminds</div></div>
+                </div>
+            </div>
+        </section>
+        <!-- Darius Mentor Section -->
+        <section class="section" style="padding: 40px 0 80px;">
+            <div class="container">
+                <div class="mentor-grid" style="display: grid; grid-template-columns: 1fr 1.5fr; gap: 60px; align-items: center; max-width: 1000px; margin: 0 auto;">
+                    <div style="position: relative;">
+                        <div style="position: absolute; inset: -4px; background: var(--gradient-red); border-radius: 24px; opacity: 0.6; filter: blur(20px);"></div>
+                        <div style="width: 100%; aspect-ratio: 1; border-radius: 20px; position: relative; z-index: 1; border: 2px solid rgba(227, 24, 55, 0.3); background: var(--black-card); display: flex; align-items: center; justify-content: center;">
+                            <div style="text-align: center; padding: 20px;">
+                                <div style="font-size: 4rem; margin-bottom: 10px;">&#x1F4BC;</div>
+                                <p style="color: var(--gray-300); font-size: 0.875rem;">Darius Benders</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <p class="section-label" style="text-align: left;">Meet Your Mentor</p>
+                        <h2 style="font-family: 'Space Grotesk', sans-serif; font-size: 2.5rem; font-weight: 700; margin-bottom: 20px;">Learn Directly From Darius</h2>
+                        <p style="color: var(--gray-300); font-size: 1.0625rem; line-height: 1.8; margin-bottom: 16px;">Darius has successfully generated <strong style="color: var(--primary-red);">$100K+ in a single day more than 10 times</strong>, as well as <strong style="color: var(--primary-red);">$1 million in a day twice</strong>. He has also helped <strong style="color: var(--primary-red);">11 people do $100K in a day</strong>.</p>
+                        <p style="color: var(--gray-300); font-size: 1.0625rem; line-height: 1.8;">In the Inner Circle, you get direct access to partner with him and implement the exact systems he uses to scale. This isn't just coaching — it's a true partnership opportunity for those who are ready to go all-in and build something massive.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="container"><div class="divider"></div></div>
+        <section class="section">
+            <div class="container">
+                <div class="section-header"><p class="section-label">What's Included</p><h2>The Complete Inner Circle Experience</h2></div>
+                <div class="features-grid">
+                    <div class="feature-card"><div class="feature-icon" style="background: rgba(255, 215, 0, 0.1);"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#FFD700" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg></div><h3 class="feature-title">One Year of Elite Coaching & Mentorship</h3><p class="feature-desc">Ongoing virtual sessions combined with deep-dive strategic support. Get direct access to Darius for an entire year.</p></div>
+                    <div class="feature-card"><div class="feature-icon" style="background: rgba(255, 215, 0, 0.1);"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#FFD700" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" /></svg></div><h3 class="feature-title">Four In-Person High-Level Masterminds</h3><p class="feature-desc">Meet and collaborate with top entrepreneurs focused on scaling. Exclusive access to our live mastermind events.</p></div>
+                    <div class="feature-card"><div class="feature-icon" style="background: rgba(255, 215, 0, 0.1);"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#FFD700" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg></div><h3 class="feature-title">7-Figure Webinar Framework</h3><p class="feature-desc">Master virtual events and webinars with our proven framework for launching high-converting events that sell.</p></div>
+                    <div class="feature-card"><div class="feature-icon" style="background: rgba(255, 215, 0, 0.1);"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#FFD700" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg></div><h3 class="feature-title">The $100K/Day Challenge Framework</h3><p class="feature-desc">We've successfully generated $100K+ in a single day six times. Learn exactly how we did it so you can implement and scale fast.</p></div>
+                    <div class="feature-card"><div class="feature-icon" style="background: rgba(255, 215, 0, 0.1);"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#FFD700" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg></div><h3 class="feature-title">Scaling with Systems & Automation</h3><p class="feature-desc">Implement SMS, email marketing, and automation to optimize growth without working more hours.</p></div>
+                    <div class="feature-card"><div class="feature-icon" style="background: rgba(255, 215, 0, 0.1);"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#FFD700" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg></div><h3 class="feature-title">Proven Marketing & Sales Strategies</h3><p class="feature-desc">Master email, SMS, and content marketing to create consistent revenue streams that scale.</p></div>
+                    <div class="feature-card"><div class="feature-icon" style="background: rgba(255, 215, 0, 0.1);"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#FFD700" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" /></svg></div><h3 class="feature-title">Private Access to Training & Replays</h3><p class="feature-desc">Lifetime access to modules, class recordings, and new high-level training as we continue to add content.</p></div>
+                    <div class="feature-card"><div class="feature-icon" style="background: rgba(255, 215, 0, 0.1);"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#FFD700" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z" /></svg></div><h3 class="feature-title">Partnership Opportunities with Darius</h3><p class="feature-desc">For those that are ready and killing it, you'll have opportunities to partner directly with Darius on deals.</p></div>
+                    <div class="feature-card"><div class="feature-icon" style="background: rgba(255, 215, 0, 0.1);"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#FFD700" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z" /><path stroke-linecap="round" stroke-linejoin="round" d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z" /></svg></div><h3 class="feature-title">7-Figure Selling 1-to-Many Framework</h3><p class="feature-desc">The exact framework for selling to groups instead of draining 1:1 calls. Scale your sales without scaling your time.</p></div>
+                    <div class="feature-card"><div class="feature-icon" style="background: rgba(255, 215, 0, 0.1);"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#FFD700" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" /></svg></div><h3 class="feature-title">Webinar Full System Build-Out</h3><p class="feature-desc">We build your complete webinar system — funnels, emails, tech, everything — so you can focus on delivering and closing.</p></div>
+                </div>
+            </div>
+        </section>
+        <!-- Inner Circle Lifestyle Section -->
+        <section style="position: relative; padding: 180px 0 280px 0; overflow: hidden;">
+            <div style="position: absolute; inset: 0; z-index: 0;">
+                <div style="width: 100%; height: 100%; background: linear-gradient(135deg, rgba(227, 24, 55, 0.15) 0%, rgba(10, 10, 10, 0.95) 50%, rgba(255, 215, 0, 0.1) 100%);"></div>
+                <div style="position: absolute; inset: 0; background: linear-gradient(180deg, var(--black) 0%, rgba(10, 10, 10, 0.7) 20%, rgba(10, 10, 10, 0.3) 50%, rgba(10, 10, 10, 0.7) 80%, var(--black) 100%);"></div>
+            </div>
+            <div class="container" style="position: relative; z-index: 1; text-align: center;">
+                <h2 style="font-family: 'Space Grotesk', sans-serif; font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 700; margin-bottom: 20px; text-shadow: 0 4px 30px rgba(0,0,0,0.8);">This Is The Lifestyle.<br><span style="background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">This Is The Inner Circle.</span></h2>
+                <p style="font-size: 1.25rem; color: var(--gray-200); max-width: 600px; margin: 0 auto; text-shadow: 0 2px 20px rgba(0,0,0,0.8);">Join the entrepreneurs who are building generational wealth and living life on their own terms.</p>
+            </div>
+        </section>
+        <section class="pricing-section">
+            <div class="container">
+                <div class="section-header"><p class="section-label">Investment</p><h2>Join The Inner Circle</h2></div>
+                <div class="pricing-grid" style="max-width: 800px;">
+                    <div class="pricing-card featured" style="border-color: #FFD700; box-shadow: 0 0 80px -20px rgba(255, 215, 0, 0.3);">
+                        <p class="pricing-duration" style="color: #FFD700;">Pay In Full — Best Value</p>
+                        <h3 class="pricing-name">Inner Circle</h3>
+                        <p class="pricing-tagline">Full year access + PIF bonuses</p>
+                        <div class="pricing-amount"><span class="pricing-currency">$</span><span class="pricing-value">25K</span></div>
+                        <ul class="pricing-features">
+                            <li><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#FFD700" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>Everything listed above</li>
+                            <li><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#FFD700" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg><strong style="color: #FFD700;">BONUS:</strong> Darius pitches at YOUR virtual event</li>
+                            <li><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#FFD700" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg><strong style="color: #FFD700;">BONUS:</strong> Featured on Darius's podcast</li>
+                            <li><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#FFD700" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg><strong style="color: #FFD700;">BONUS:</strong> VIP Dinner with Darius</li>
+                            <li><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#FFD700" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>Save $5,000 vs payment plan</li>
+                        </ul>
+                        <a href="https://www.fanbasis.com/agency-checkout/Dariusbenders/0RDmy" target="_blank" class="cta-button" style="background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%); color: #000; font-weight: 700; text-decoration: none;">Apply For Inner Circle</a>
+                    </div>
+                    <div class="pricing-card">
+                        <p class="pricing-duration">Two-Pay Option</p>
+                        <h3 class="pricing-name">Inner Circle</h3>
+                        <p class="pricing-tagline">Split into 2 payments</p>
+                        <div class="pricing-amount"><span class="pricing-currency">$</span><span class="pricing-value">30K</span></div>
+                        <ul class="pricing-features">
+                            <li><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>One year of elite coaching</li>
+                            <li><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>Four in-person masterminds</li>
+                            <li><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>$100K/Day challenge framework</li>
+                            <li><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>7-figure webinar framework</li>
+                            <li><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>Partnership opportunities</li>
+                            <li style="color: var(--gray-500);"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" style="color: var(--gray-600);"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>PIF bonuses not included</li>
+                        </ul>
+                        <a href="https://www.fanbasis.com/agency-checkout/Dariusbenders/pYg9X" target="_blank" class="cta-button" style="text-decoration: none;">Apply For Inner Circle</a>
+                    </div>
+                </div>
+                <p style="text-align: center; color: var(--gray-400); margin-top: 32px; font-size: 0.9375rem;">Limited spots available. Application required.</p>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="container">
+            <p class="footer-text">&copy; 2024 <a href="#">Influence2Impact</a>. All rights reserved.</p>
         </div>
-        <div class="deliverable-card">
-          <h3>Content Framework</h3>
-          <p>Proven content templates and frameworks to drive engagement.</p>
-        </div>
-        <div class="deliverable-card">
-          <h3>Implementation Guide</h3>
-          <p>Step-by-step action plan to put everything into practice.</p>
-        </div>
-        <div class="deliverable-card">
-          <h3>Support &amp; Resources</h3>
-          <p>Ongoing access to resources and community support.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="section">
-      <h2>Why Choose Influence2Impact</h2>
-      <ul>
-        <li>Proven results with a track record of success</li>
-        <li>Personalized approach tailored to your unique needs</li>
-        <li>Comprehensive deliverables covering every aspect</li>
-        <li>Ongoing support to ensure your success</li>
-      </ul>
-    </div>
-
-    <div class="cta">
-      <h2>Ready to Get Started?</h2>
-      <p>Take the next step and transform your influence into real impact.</p>
-      <a href="#">Accept This Offer</a>
-    </div>
-  </div>
+    </footer>
 </body>
 </html>
