@@ -6,16 +6,11 @@ import type { Testimonial } from "@/data/testimonials";
 import TestimonialCard from "./TestimonialCard";
 
 export default function TestimonialGrid({ testimonials }: { testimonials: Testimonial[] }) {
+  const hasVideo = testimonials.some((t) => t.videoUrl);
+
   return (
     <div
-      style={{
-        display: "grid",
-        gridTemplateColumns: "repeat(auto-fit, minmax(340px, 1fr))",
-        gap: 20,
-        maxWidth: 1000,
-        margin: "0 auto",
-        padding: "0 24px",
-      }}
+      className={hasVideo ? "testimonial-grid-video" : "testimonial-grid-text"}
     >
       {testimonials.map((t, i) => (
         <AnimatedCard key={t.id} testimonial={t} index={i} />
@@ -31,9 +26,13 @@ function AnimatedCard({ testimonial, index }: { testimonial: Testimonial; index:
   return (
     <motion.div
       ref={ref}
-      initial={{ opacity: 0, y: 40 }}
+      initial={{ opacity: 0, y: 20 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
-      transition={{ delay: index * 0.08, duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
+      transition={{
+        delay: Math.min(index * 0.1, 0.6),
+        duration: 0.4,
+        ease: "easeOut",
+      }}
     >
       <TestimonialCard testimonial={testimonial} />
     </motion.div>
