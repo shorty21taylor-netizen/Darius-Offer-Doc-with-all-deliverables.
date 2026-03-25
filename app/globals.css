@@ -437,4 +437,52 @@ header { padding: 32px 0; border-bottom: 1px solid rgba(255,255,255,0.06); }
     grid-template-columns: 1fr;
     gap: 16px;
   }
+  .screenshot-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+/* ── Screenshot gallery ── */
+
+.screenshot-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.screenshot-card {
+  background: #141414;
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+.screenshot-card:hover {
+  border-color: rgba(255,255,255,0.12);
+  transform: translateY(-2px);
+}
+
+.screenshot-img-wrap {
+  overflow: hidden;
+}
+
+.screenshot-card:hover .screenshot-img-wrap img {
+  transform: scale(1.02);
+}
+
+.screenshot-img-wrap img {
+  transition: transform 0.3s ease;
+}
+
+@keyframes testimonialFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@media (max-width: 1023px) {
+  .screenshot-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }

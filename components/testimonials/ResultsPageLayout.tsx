@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { testimonialsByPage } from "@/data/testimonials";
 import TestimonialGrid from "./TestimonialGrid";
+import ScreenshotGallery from "./ScreenshotGallery";
 import ResultsCTA from "./ResultsCTA";
 
 export default function ResultsPageLayout({ pageKey }: { pageKey: string }) {
@@ -25,7 +26,7 @@ export default function ResultsPageLayout({ pageKey }: { pageKey: string }) {
                 transition: "color 0.2s",
               }}
             >
-              ← {data.backText}
+              &larr; {data.backText}
             </Link>
           </div>
 
@@ -92,6 +93,16 @@ export default function ResultsPageLayout({ pageKey }: { pageKey: string }) {
       <section style={{ padding: "60px 0 40px" }}>
         <TestimonialGrid testimonials={data.testimonials} />
       </section>
+
+      {/* Screenshots Gallery (if present) */}
+      {data.screenshots && data.screenshots.length > 0 && (
+        <>
+          <div className="container">
+            <div className="divider" />
+          </div>
+          <ScreenshotGallery screenshots={data.screenshots} />
+        </>
+      )}
 
       {/* Divider */}
       <div className="container">

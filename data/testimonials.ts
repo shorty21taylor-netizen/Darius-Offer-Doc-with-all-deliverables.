@@ -11,6 +11,12 @@ export interface Testimonial {
   photoUrl?: string;
 }
 
+export interface ResultScreenshot {
+  id: string;
+  imageUrl: string;
+  caption?: string;
+}
+
 export interface PageTestimonials {
   modalTitle: string;
   subtitle: string;
@@ -20,6 +26,7 @@ export interface PageTestimonials {
   backLink: string;
   backText: string;
   testimonials: Testimonial[];
+  screenshots?: ResultScreenshot[];
 }
 
 export const testimonialsByPage: Record<string, PageTestimonials> = {
@@ -116,7 +123,7 @@ export const testimonialsByPage: Record<string, PageTestimonials> = {
   funding: {
     modalTitle: "Our Clients Are Getting Funded",
     subtitle: "Real results from real people in our funding program.",
-    statsRow: ["12+ Video Testimonials", "$100K+ Months Achieved", "$150K+ Funding Secured"],
+    statsRow: ["20+ Video Testimonials", "$100K+ Months Achieved", "Real Telegram Proof"],
     ctaLink: "https://www.fanbasis.com/agency-checkout/Dariusbenders/PZRW",
     ctaText: "Get Started Today",
     backLink: "/funding-mastery",
@@ -253,6 +260,129 @@ export const testimonialsByPage: Record<string, PageTestimonials> = {
         quote: "",
         resultHighlight: "$50K–$70K Funded",
         rating: 5,
+      },
+      {
+        id: "fund-13",
+        name: "Jeffrey",
+        initials: "JE",
+        avatarColor: "#22c55e",
+        role: "Funding Program Client",
+        videoUrl: "https://funding.b-cdn.net/Jeffrey%20-%20got%205%20credit%20repair%20clients%20for%20.mp4",
+        quote: "",
+        resultHighlight: "5 Credit Repair Clients",
+        rating: 5,
+      },
+      {
+        id: "fund-14",
+        name: "Joy Sneed",
+        initials: "JS",
+        avatarColor: "#22c55e",
+        role: "Funding Program Client",
+        videoUrl: "https://funding.b-cdn.net/JOY%20SNEED.mp4",
+        quote: "",
+        resultHighlight: "",
+        rating: 5,
+      },
+      {
+        id: "fund-15",
+        name: "Michael Alexander",
+        initials: "MA",
+        avatarColor: "#22c55e",
+        role: "Funding Program Client",
+        videoUrl: "https://funding.b-cdn.net/Michael%20Alexander%20-%20got%20about%2030%20peop.mp4",
+        quote: "",
+        resultHighlight: "30+ People Helped",
+        rating: 5,
+      },
+      {
+        id: "fund-16",
+        name: "Noreen",
+        initials: "NO",
+        avatarColor: "#22c55e",
+        role: "Funding Program Client",
+        videoUrl: "https://funding.b-cdn.net/Noreen.mov",
+        quote: "",
+        resultHighlight: "",
+        rating: 5,
+      },
+      {
+        id: "fund-17",
+        name: "Renee Sterrett",
+        initials: "RS",
+        avatarColor: "#22c55e",
+        role: "Funding Program Client",
+        videoUrl: "https://funding.b-cdn.net/RENEE%20STERRETT.mp4",
+        quote: "",
+        resultHighlight: "",
+        rating: 5,
+      },
+      {
+        id: "fund-18",
+        name: "Shawn & Eliana",
+        initials: "SE",
+        avatarColor: "#22c55e",
+        role: "Funding Program Client",
+        videoUrl: "https://funding.b-cdn.net/Shawn%20and%20Eliana-04222025.mp4",
+        quote: "",
+        resultHighlight: "",
+        rating: 5,
+      },
+      {
+        id: "fund-19",
+        name: "Steven Eleazar",
+        initials: "SE",
+        avatarColor: "#d4af37",
+        role: "Funding Program Client",
+        videoUrl: "https://funding.b-cdn.net/Steven%20Eleazar%20-%20got%20%2450K%20from%20Lightst.mp4",
+        quote: "",
+        resultHighlight: "$50K Funded",
+        rating: 5,
+      },
+      {
+        id: "fund-20",
+        name: "Tamira",
+        initials: "TA",
+        avatarColor: "#d4af37",
+        role: "Funding Program Client",
+        videoUrl: "https://funding.b-cdn.net/TAMIRA%20-%2060K.mp4",
+        quote: "",
+        resultHighlight: "$60K Funded",
+        rating: 5,
+      },
+    ],
+    screenshots: [
+      {
+        id: "ss-1",
+        imageUrl: "https://funding.b-cdn.net/Screenshot%202025-03-31%20at%2011.19.04%20PM.png",
+      },
+      {
+        id: "ss-2",
+        imageUrl: "https://funding.b-cdn.net/Screenshot%202025-04-03%20at%2011.02.59PM.png",
+      },
+      {
+        id: "ss-3",
+        imageUrl: "https://funding.b-cdn.net/Screenshot%202025-04-03%20at%2011.06.34%20PM.png",
+        caption: "+$1,510 Result",
+      },
+      {
+        id: "ss-4",
+        imageUrl: "https://funding.b-cdn.net/Screenshot%202025-04-03%20at%2011.07.31PM.png",
+      },
+      {
+        id: "ss-5",
+        imageUrl: "https://funding.b-cdn.net/Screenshot%202025-04-03%20at%2011.08.47PM.png",
+      },
+      {
+        id: "ss-6",
+        imageUrl: "https://funding.b-cdn.net/Screenshot%202025-04-03%20at%2011.09.16%20PM.png",
+      },
+      {
+        id: "ss-7",
+        imageUrl: "https://funding.b-cdn.net/Screenshot%202025-04-03%20at%2011.14.56%20PM.png",
+      },
+      {
+        id: "ss-8",
+        imageUrl: "https://funding.b-cdn.net/Screenshot%202025-04-03%20at%2011.18.33%20PM.png",
       },
     ],
   },
