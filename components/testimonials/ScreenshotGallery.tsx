@@ -101,6 +101,9 @@ function ScreenshotCard({
               display: "block",
               objectFit: "contain",
             }}
+            onError={(e) => {
+              (e.currentTarget.closest(".screenshot-card") as HTMLElement | null)?.style.setProperty("display", "none");
+            }}
           />
         </div>
         {screenshot.caption && (

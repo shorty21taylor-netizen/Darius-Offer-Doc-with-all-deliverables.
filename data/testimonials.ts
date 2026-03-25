@@ -353,36 +353,36 @@ export const testimonialsByPage: Record<string, PageTestimonials> = {
     screenshots: [
       {
         id: "ss-1",
-        imageUrl: "https://funding.b-cdn.net/Screenshot%202025-03-31%20at%2011.19.04%20PM.png",
+        imageUrl: "https://funding.b-cdn.net/Screenshot%202025-03-31%20at%2011.19.04%E2%80%AFPM.png",
       },
       {
         id: "ss-2",
-        imageUrl: "https://funding.b-cdn.net/Screenshot%202025-04-03%20at%2011.02.59PM.png",
+        imageUrl: "https://funding.b-cdn.net/Screenshot%202025-04-03%20at%2011.02.59%E2%80%AFPM.png",
       },
       {
         id: "ss-3",
-        imageUrl: "https://funding.b-cdn.net/Screenshot%202025-04-03%20at%2011.06.34%20PM.png",
+        imageUrl: "https://funding.b-cdn.net/Screenshot%202025-04-03%20at%2011.06.34%E2%80%AFPM.png",
         caption: "+$1,510 Result",
       },
       {
         id: "ss-4",
-        imageUrl: "https://funding.b-cdn.net/Screenshot%202025-04-03%20at%2011.07.31PM.png",
+        imageUrl: "https://funding.b-cdn.net/Screenshot%202025-04-03%20at%2011.07.31%E2%80%AFPM.png",
       },
       {
         id: "ss-5",
-        imageUrl: "https://funding.b-cdn.net/Screenshot%202025-04-03%20at%2011.08.47PM.png",
+        imageUrl: "https://funding.b-cdn.net/Screenshot%202025-04-03%20at%2011.08.47%E2%80%AFPM.png",
       },
       {
         id: "ss-6",
-        imageUrl: "https://funding.b-cdn.net/Screenshot%202025-04-03%20at%2011.09.16%20PM.png",
+        imageUrl: "https://funding.b-cdn.net/Screenshot%202025-04-03%20at%2011.09.16%E2%80%AFPM.png",
       },
       {
         id: "ss-7",
-        imageUrl: "https://funding.b-cdn.net/Screenshot%202025-04-03%20at%2011.14.56%20PM.png",
+        imageUrl: "https://funding.b-cdn.net/Screenshot%202025-04-03%20at%2011.14.56%E2%80%AFPM.png",
       },
       {
         id: "ss-8",
-        imageUrl: "https://funding.b-cdn.net/Screenshot%202025-04-03%20at%2011.18.33%20PM.png",
+        imageUrl: "https://funding.b-cdn.net/Screenshot%202025-04-03%20at%2011.18.33%E2%80%AFPM.png",
       },
     ],
   },
