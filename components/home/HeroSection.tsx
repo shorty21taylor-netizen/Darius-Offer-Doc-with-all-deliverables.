@@ -2,6 +2,7 @@
 
 import { useEffect, useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 
 export default function HeroSection() {
   const [showSubtitle, setShowSubtitle] = useState(false);
@@ -48,15 +49,51 @@ export default function HeroSection() {
         overflow: "hidden",
       }}
     >
+      {/* ── Background image: LEFT (award/credibility) ── */}
+      <div className="hero-bg-image-left">
+        <Image
+          src="/images/darius-award.jpg"
+          alt=""
+          fill
+          priority
+          sizes="45vw"
+          style={{
+            objectFit: "cover",
+            objectPosition: "center",
+          }}
+        />
+        <div className="hero-bg-image-gold-tint" />
+      </div>
+
+      {/* ── Background image: RIGHT (portrait/authority) ── */}
+      <div className="hero-bg-image-right">
+        <Image
+          src="/images/darius-portrait.jpg"
+          alt=""
+          fill
+          priority
+          sizes="45vw"
+          style={{
+            objectFit: "cover",
+            objectPosition: "center top",
+          }}
+        />
+        <div className="hero-bg-image-gold-tint" />
+      </div>
+
+      {/* ── Center darkening overlay ── */}
+      <div className="hero-center-darken" />
+
       {/* Animated mesh gradient background */}
       <div
         style={{
           position: "absolute",
           inset: 0,
-          zIndex: 0,
+          zIndex: 3,
           background:
             "radial-gradient(ellipse at 20% 50%, rgba(227,24,55,0.08) 0%, transparent 50%), radial-gradient(ellipse at 80% 20%, rgba(212,175,55,0.06) 0%, transparent 50%), radial-gradient(ellipse at 50% 80%, rgba(227,24,55,0.05) 0%, transparent 50%)",
           animation: "meshShift 12s ease-in-out infinite alternate",
+          pointerEvents: "none",
         }}
       />
 
@@ -65,7 +102,7 @@ export default function HeroSection() {
         style={{
           position: "absolute",
           inset: 0,
-          zIndex: 0,
+          zIndex: 3,
           opacity: 0.04,
           pointerEvents: "none",
           backgroundImage:
@@ -79,7 +116,7 @@ export default function HeroSection() {
         height="80"
         viewBox="0 0 80 80"
         fill="none"
-        style={{ marginBottom: 40, position: "relative", zIndex: 2 }}
+        style={{ marginBottom: 40, position: "relative", zIndex: 10 }}
       >
         <motion.rect
           x="2"
@@ -125,7 +162,7 @@ export default function HeroSection() {
           letterSpacing: "-0.04em",
           marginBottom: 24,
           position: "relative",
-          zIndex: 2,
+          zIndex: 10,
         }}
       >
         {title.split("").map((char, i) => (
@@ -171,7 +208,7 @@ export default function HeroSection() {
               maxWidth: 600,
               lineHeight: 1.7,
               position: "relative",
-              zIndex: 2,
+              zIndex: 10,
               marginBottom: 0,
             }}
           >
@@ -188,7 +225,7 @@ export default function HeroSection() {
           bottom: 40,
           left: "50%",
           transform: "translateX(-50%)",
-          zIndex: 2,
+          zIndex: 10,
           opacity: chevronOpacity,
           cursor: "pointer",
         }}

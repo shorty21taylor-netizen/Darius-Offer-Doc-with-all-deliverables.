@@ -203,6 +203,122 @@ header { padding: 32px 0; border-bottom: 1px solid rgba(255,255,255,0.06); }
   .bonus-card { padding: 32px 24px; }
 }
 
+/* ── Hero background images ── */
+
+.hero-bg-image-left {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 45%;
+  height: 100%;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.hero-bg-image-left img {
+  opacity: 0.12;
+  filter: grayscale(40%) brightness(0.4);
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(0,0,0,0.6) 20%,
+    rgba(0,0,0,0.8) 50%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(0,0,0,0.6) 20%,
+    rgba(0,0,0,0.8) 50%,
+    transparent 100%
+  );
+  animation: slowDrift 20s ease-in-out infinite;
+  will-change: transform;
+}
+
+.hero-bg-image-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 45%;
+  height: 100%;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.hero-bg-image-right img {
+  opacity: 0.15;
+  filter: grayscale(30%) brightness(0.45);
+  mask-image: linear-gradient(
+    to left,
+    transparent 0%,
+    rgba(0,0,0,0.6) 20%,
+    rgba(0,0,0,0.8) 50%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to left,
+    transparent 0%,
+    rgba(0,0,0,0.6) 20%,
+    rgba(0,0,0,0.8) 50%,
+    transparent 100%
+  );
+  animation: slowDrift 20s ease-in-out infinite;
+  animation-delay: -10s;
+  will-change: transform;
+}
+
+/* Subtle gold wash over both images */
+.hero-bg-image-gold-tint {
+  position: absolute;
+  inset: 0;
+  background: rgba(212, 175, 55, 0.08);
+  mix-blend-mode: overlay;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Center darkening radial — keeps text area clean */
+.hero-center-darken {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(10, 10, 10, 0.95) 0%,
+    rgba(10, 10, 10, 0.7) 40%,
+    rgba(10, 10, 10, 0.3) 70%,
+    transparent 100%
+  );
+  pointer-events: none;
+}
+
+@keyframes slowDrift {
+  0% { transform: scale(1.0) translate(0, 0); }
+  50% { transform: scale(1.05) translate(-1%, -1%); }
+  100% { transform: scale(1.0) translate(0, 0); }
+}
+
+/* Tablet: only show portrait, centered full-width */
+@media (max-width: 1023px) and (min-width: 768px) {
+  .hero-bg-image-left { display: none; }
+  .hero-bg-image-right {
+    width: 100%;
+    right: 0;
+  }
+  .hero-bg-image-right img {
+    opacity: 0.08;
+    mask-image: radial-gradient(ellipse at center, rgba(0,0,0,0.7) 0%, transparent 70%);
+    -webkit-mask-image: radial-gradient(ellipse at center, rgba(0,0,0,0.7) 0%, transparent 70%);
+  }
+}
+
+/* Mobile: hide both */
+@media (max-width: 767px) {
+  .hero-bg-image-left { display: none; }
+  .hero-bg-image-right { display: none; }
+}
+
 /* ── Homepage animations ── */
 
 @keyframes meshShift {
