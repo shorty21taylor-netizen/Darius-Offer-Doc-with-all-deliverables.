@@ -56,13 +56,12 @@ export default function HeroSection() {
           alt=""
           fill
           priority
-          sizes="45vw"
+          sizes="55vw"
           style={{
             objectFit: "cover",
-            objectPosition: "center",
+            objectPosition: "center center",
           }}
         />
-        <div className="hero-bg-image-gold-tint" />
       </div>
 
       {/* ── Background image: RIGHT (portrait/authority) ── */}
@@ -72,13 +71,12 @@ export default function HeroSection() {
           alt=""
           fill
           priority
-          sizes="45vw"
+          sizes="55vw"
           style={{
             objectFit: "cover",
-            objectPosition: "center top",
+            objectPosition: "center 20%",
           }}
         />
-        <div className="hero-bg-image-gold-tint" />
       </div>
 
       {/* ── Center darkening overlay ── */}
@@ -109,49 +107,6 @@ export default function HeroSection() {
             "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\")",
         }}
       />
-
-      {/* SVG I2I Monogram - draws on load */}
-      <motion.svg
-        width="80"
-        height="80"
-        viewBox="0 0 80 80"
-        fill="none"
-        style={{ marginBottom: 40, position: "relative", zIndex: 10 }}
-      >
-        <motion.rect
-          x="2"
-          y="2"
-          width="76"
-          height="76"
-          rx="16"
-          stroke="url(#logoGrad)"
-          strokeWidth="2"
-          fill="rgba(10,10,10,0.8)"
-          initial={{ pathLength: 0 }}
-          animate={{ pathLength: 1 }}
-          transition={{ duration: 1.5, ease: "easeInOut" }}
-        />
-        <defs>
-          <linearGradient id="logoGrad" x1="0" y1="0" x2="80" y2="80">
-            <stop offset="0%" stopColor="#d4af37" />
-            <stop offset="100%" stopColor="#f5d063" />
-          </linearGradient>
-        </defs>
-        <motion.text
-          x="40"
-          y="48"
-          textAnchor="middle"
-          fontFamily="'Space Grotesk', sans-serif"
-          fontWeight="800"
-          fontSize="28"
-          fill="url(#logoGrad)"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.2, duration: 0.6 }}
-        >
-          I2I
-        </motion.text>
-      </motion.svg>
 
       {/* Staggered letter reveal headline */}
       <h1
