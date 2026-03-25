@@ -17,8 +17,11 @@ export default function Home() {
         <Link href="/saas" className="btn-gold">
           Fund2Grow Platform
         </Link>
-        <Link href="/programs" className="btn-gold">
-          Programs &amp; Coaching
+        <Link href="/funding-mastery" className="btn-gold">
+          Funding Mastery
+        </Link>
+        <Link href="/digital-mastery" className="btn-gold">
+          Digital Mastery
         </Link>
         <Link href="/inner-circle" className="btn-gold">
           Inner Circle

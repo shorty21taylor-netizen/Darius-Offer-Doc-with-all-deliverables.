@@ -7,7 +7,8 @@ import { Menu, X } from "lucide-react";
 
 const links = [
   { href: "/saas", label: "Fund2Grow" },
-  { href: "/programs", label: "Programs" },
+  { href: "/funding-mastery", label: "Funding Mastery" },
+  { href: "/digital-mastery", label: "Digital Mastery" },
   { href: "/inner-circle", label: "Inner Circle" },
 ];
 

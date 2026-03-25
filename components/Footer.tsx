@@ -11,8 +11,11 @@ export default function Footer() {
           <Link href="/saas" className="text-sm text-text-secondary hover:text-white transition-colors">
             Fund2Grow
           </Link>
-          <Link href="/programs" className="text-sm text-text-secondary hover:text-white transition-colors">
-            Programs
+          <Link href="/funding-mastery" className="text-sm text-text-secondary hover:text-white transition-colors">
+            Funding Mastery
+          </Link>
+          <Link href="/digital-mastery" className="text-sm text-text-secondary hover:text-white transition-colors">
+            Digital Mastery
           </Link>
           <Link href="/inner-circle" className="text-sm text-text-secondary hover:text-white transition-colors">
             Inner Circle
