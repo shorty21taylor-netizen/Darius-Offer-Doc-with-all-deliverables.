@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import TestimonialButton from "@/components/testimonials/TestimonialButton";
+import InlineResultsButton from "@/components/testimonials/InlineResultsButton";
 
 export const metadata: Metadata = {
   title: "Fund2Grow.ai — CRM & Automation for Funding Professionals | I2I",
@@ -35,6 +35,9 @@ export default function SaasPage() {
             <div className="stat"><div className="stat-value"><span>Auto</span></div><div className="stat-label">Apply System</div></div>
             <div className="stat"><div className="stat-value">CRM</div><div className="stat-label">Client Dashboard</div></div>
             <div className="stat"><div className="stat-value"><span>24/7</span></div><div className="stat-label">Automation</div></div>
+          </div>
+          <div style={{ display: "flex", justifyContent: "center", marginTop: 48 }}>
+            <InlineResultsButton href="/saas/results" />
           </div>
         </div>
       </section>
@@ -84,7 +87,6 @@ export default function SaasPage() {
           <p style={{ textAlign: "center", color: "var(--gray-400)", marginTop: 32, fontSize: "0.9375rem" }}>Automate your funding business and scale without the headaches.</p>
         </div>
       </section>
-      <TestimonialButton pageKey="saas" />
     </>
   );
 }

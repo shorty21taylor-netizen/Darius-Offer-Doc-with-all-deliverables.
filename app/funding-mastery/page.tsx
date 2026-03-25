@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import TestimonialButton from "@/components/testimonials/TestimonialButton";
+import InlineResultsButton from "@/components/testimonials/InlineResultsButton";
 
 export const metadata: Metadata = {
   title: "Funding Mastery — Credit & Business Funding Program | I2I",
@@ -30,6 +30,9 @@ export default function FundingMasteryPage() {
             <div className="stat"><div className="stat-value"><span>1:1</span></div><div className="stat-label">Dedicated Coach</div></div>
             <div className="stat"><div className="stat-value">Bi-Weekly</div><div className="stat-label">Calls with Darius</div></div>
             <div className="stat"><div className="stat-value"><span>$150K</span>+</div><div className="stat-label">Funding Potential</div></div>
+          </div>
+          <div style={{ display: "flex", justifyContent: "center", marginTop: 48 }}>
+            <InlineResultsButton href="/funding-mastery/results" text="See Funding Results →" />
           </div>
         </div>
       </section>
@@ -144,7 +147,6 @@ export default function FundingMasteryPage() {
           </div>
         </div>
       </section>
-      <TestimonialButton pageKey="funding" />
     </>
   );
 }

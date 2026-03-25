@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import TestimonialButton from "@/components/testimonials/TestimonialButton";
+import InlineResultsButton from "@/components/testimonials/InlineResultsButton";
 
 export const metadata: Metadata = {
   title: "The Inner Circle — Elite Mastermind with Darius Benders | I2I",
@@ -44,6 +44,9 @@ export default function InnerCirclePage() {
             <div className="stat"><div className="stat-value"><span>$100K</span>+</div><div className="stat-label">Single Day Potential</div></div>
             <div className="stat"><div className="stat-value">1 Year</div><div className="stat-label">Elite Access</div></div>
             <div className="stat"><div className="stat-value"><span>4</span> Live</div><div className="stat-label">In-Person Masterminds</div></div>
+          </div>
+          <div style={{ display: "flex", justifyContent: "center", marginTop: 48 }}>
+            <InlineResultsButton href="/inner-circle/results" />
           </div>
         </div>
       </section>
@@ -199,7 +202,6 @@ export default function InnerCirclePage() {
           <p style={{ textAlign: "center", color: "var(--gray-400)", marginTop: 32, fontSize: "0.9375rem" }}>Limited spots available. Application required.</p>
         </div>
       </section>
-      <TestimonialButton pageKey="innerCircle" />
     </>
   );
 }

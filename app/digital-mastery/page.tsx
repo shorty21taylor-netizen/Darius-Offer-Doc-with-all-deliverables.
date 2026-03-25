@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import TestimonialButton from "@/components/testimonials/TestimonialButton";
+import InlineResultsButton from "@/components/testimonials/InlineResultsButton";
 
 export const metadata: Metadata = {
   title: "Digital Mastery — Scale With Webinar Selling | I2I",
@@ -36,6 +36,9 @@ export default function DigitalMasteryPage() {
             <div className="stat"><div className="stat-value"><span>1:Many</span></div><div className="stat-label">Webinar Sales</div></div>
             <div className="stat"><div className="stat-value">DFY</div><div className="stat-label">Funnel Build</div></div>
             <div className="stat"><div className="stat-value"><span>5-Fig</span>+</div><div className="stat-label">Weekly Potential</div></div>
+          </div>
+          <div style={{ display: "flex", justifyContent: "center", marginTop: 48 }}>
+            <InlineResultsButton href="/digital-mastery/results" text="See Digital Results →" />
           </div>
         </div>
       </section>
@@ -141,7 +144,6 @@ export default function DigitalMasteryPage() {
           <p style={{ textAlign: "center", color: "var(--gray-400)", marginTop: 32, fontSize: "0.9375rem" }}>Perfect for coaches, consultants, service providers, and anyone running a funding or credit repair business.</p>
         </div>
       </section>
-      <TestimonialButton pageKey="digital" />
     </>
   );
 }

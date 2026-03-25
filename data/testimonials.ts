@@ -12,12 +12,24 @@ export interface Testimonial {
 
 export interface PageTestimonials {
   modalTitle: string;
+  subtitle: string;
+  statsRow: string[];
+  ctaLink: string;
+  ctaText: string;
+  backLink: string;
+  backText: string;
   testimonials: Testimonial[];
 }
 
 export const testimonialsByPage: Record<string, PageTestimonials> = {
   home: {
-    modalTitle: "Real Results From Real People",
+    modalTitle: "Real Results. Real People. Real Transformation.",
+    subtitle: "Don't take our word for it — see what our clients have to say.",
+    statsRow: ["500+ Clients Served", "$10M+ In Funding", "100+ Success Stories"],
+    ctaLink: "/",
+    ctaText: "Explore Our Programs",
+    backLink: "/",
+    backText: "Back to Home",
     testimonials: [
       {
         id: "home-1",
@@ -56,7 +68,13 @@ export const testimonialsByPage: Record<string, PageTestimonials> = {
   },
 
   saas: {
-    modalTitle: "Fund2Grow Success Stories",
+    modalTitle: "Fund2Grow Is Changing the Game",
+    subtitle: "See how funding professionals are scaling with our platform.",
+    statsRow: ["XX+ Active Users", "XXX+ Auto Applies/Month", "XX% Time Saved"],
+    ctaLink: "http://www.fund2grow.ai/",
+    ctaText: "Start Your Free Trial",
+    backLink: "/saas",
+    backText: "Back to Fund2Grow",
     testimonials: [
       {
         id: "saas-1",
@@ -95,7 +113,13 @@ export const testimonialsByPage: Record<string, PageTestimonials> = {
   },
 
   funding: {
-    modalTitle: "Funding Program Results",
+    modalTitle: "Our Clients Are Getting Funded",
+    subtitle: "Real people, real funding — see the results for yourself.",
+    statsRow: ["500+ Clients Funded", "$10M+ Total Funding", "95% Satisfaction"],
+    ctaLink: "https://www.fanbasis.com/agency-checkout/Dariusbenders/PZRW",
+    ctaText: "Get Started Today",
+    backLink: "/funding-mastery",
+    backText: "Back to Funding Program",
     testimonials: [
       {
         id: "fund-1",
@@ -134,7 +158,13 @@ export const testimonialsByPage: Record<string, PageTestimonials> = {
   },
 
   digital: {
-    modalTitle: "Digital Mastermind Results",
+    modalTitle: "Scaling to 5 Figures and Beyond",
+    subtitle: "Our clients are closing deals and building empires with webinars.",
+    statsRow: ["XX+ Funnels Built", "$X.XM+ Collected", "XX Students Scaling"],
+    ctaLink: "https://www.fanbasis.com/agency-checkout/Dariusbenders/Qx89",
+    ctaText: "Join The Mastermind",
+    backLink: "/digital-mastery",
+    backText: "Back to Digital Mastermind",
     testimonials: [
       {
         id: "digi-1",
@@ -173,7 +203,17 @@ export const testimonialsByPage: Record<string, PageTestimonials> = {
   },
 
   innerCircle: {
-    modalTitle: "Inner Circle Transformations",
+    modalTitle: "The Inner Circle Speaks for Itself",
+    subtitle: "Hear from the entrepreneurs who are building generational wealth.",
+    statsRow: [
+      "11 Students Hit $100K Days",
+      "$1M+ Days — Twice",
+      "4 Live Masterminds/Year",
+    ],
+    ctaLink: "https://www.fanbasis.com/agency-checkout/Dariusbenders/0RDmy",
+    ctaText: "Apply For Inner Circle",
+    backLink: "/inner-circle",
+    backText: "Back to Inner Circle",
     testimonials: [
       {
         id: "ic-1",
