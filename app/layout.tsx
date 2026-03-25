@@ -38,6 +38,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
         <footer>
           <div className="container">
+            <div style={{ display: "flex", justifyContent: "center", gap: 24, flexWrap: "wrap", marginBottom: 16 }}>
+              <a href="/saas" className="footer-text" style={{ color: "var(--gray-400)", textDecoration: "none", fontSize: "0.8125rem" }}>Fund2Grow</a>
+              <a href="/funding-mastery" className="footer-text" style={{ color: "var(--gray-400)", textDecoration: "none", fontSize: "0.8125rem" }}>Funding Mastery</a>
+              <a href="/digital-mastery" className="footer-text" style={{ color: "var(--gray-400)", textDecoration: "none", fontSize: "0.8125rem" }}>Digital Mastery</a>
+              <a href="/inner-circle" className="footer-text" style={{ color: "var(--gray-400)", textDecoration: "none", fontSize: "0.8125rem" }}>Inner Circle</a>
+            </div>
             <p className="footer-text">
               &copy; 2024 <a href="/">Influence2Impact</a>. All rights reserved.
             </p>
