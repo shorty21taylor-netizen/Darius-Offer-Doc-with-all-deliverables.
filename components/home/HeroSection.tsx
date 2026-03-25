@@ -52,7 +52,7 @@ export default function HeroSection() {
       {/* ── Background image: LEFT (award/credibility) ── */}
       <div className="hero-bg-image-left">
         <Image
-          src="/images/darius-award.jpg"
+          src="/IMG_5231.JPG"
           alt=""
           fill
           priority
@@ -67,7 +67,7 @@ export default function HeroSection() {
       {/* ── Background image: RIGHT (portrait/authority) ── */}
       <div className="hero-bg-image-right">
         <Image
-          src="/images/darius-portrait.jpg"
+          src="/labor day.jpeg"
           alt=""
           fill
           priority
