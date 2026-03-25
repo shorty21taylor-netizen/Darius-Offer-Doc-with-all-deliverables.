@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import TestimonialButton from "@/components/testimonials/TestimonialButton";
 
 export const metadata: Metadata = {
   title: "Funding Mastery — Credit & Business Funding Program | I2I",
@@ -143,6 +144,7 @@ export default function FundingMasteryPage() {
           </div>
         </div>
       </section>
+      <TestimonialButton pageKey="funding" />
     </>
   );
 }

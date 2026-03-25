@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import TestimonialButton from "@/components/testimonials/TestimonialButton";
 
 export const metadata: Metadata = {
   title: "Digital Mastery — Scale With Webinar Selling | I2I",
@@ -140,6 +141,7 @@ export default function DigitalMasteryPage() {
           <p style={{ textAlign: "center", color: "var(--gray-400)", marginTop: 32, fontSize: "0.9375rem" }}>Perfect for coaches, consultants, service providers, and anyone running a funding or credit repair business.</p>
         </div>
       </section>
+      <TestimonialButton pageKey="digital" />
     </>
   );
 }

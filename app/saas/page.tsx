@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import TestimonialButton from "@/components/testimonials/TestimonialButton";
 
 export const metadata: Metadata = {
   title: "Fund2Grow.ai — CRM & Automation for Funding Professionals | I2I",
@@ -83,6 +84,7 @@ export default function SaasPage() {
           <p style={{ textAlign: "center", color: "var(--gray-400)", marginTop: 32, fontSize: "0.9375rem" }}>Automate your funding business and scale without the headaches.</p>
         </div>
       </section>
+      <TestimonialButton pageKey="saas" />
     </>
   );
 }

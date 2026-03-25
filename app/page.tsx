@@ -3,6 +3,7 @@ import CursorGlow from "@/components/home/CursorGlow";
 import HeroSection from "@/components/home/HeroSection";
 import CredibilityMarquee from "@/components/home/CredibilityMarquee";
 import PortalCardsGrid from "@/components/home/PortalCardsGrid";
+import TestimonialButton from "@/components/testimonials/TestimonialButton";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <HeroSection />
       <CredibilityMarquee />
       <PortalCardsGrid />
+      <TestimonialButton pageKey="home" />
     </>
   );
 }

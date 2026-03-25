@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import TestimonialButton from "@/components/testimonials/TestimonialButton";
 
 export const metadata: Metadata = {
   title: "The Inner Circle — Elite Mastermind with Darius Benders | I2I",
@@ -198,6 +199,7 @@ export default function InnerCirclePage() {
           <p style={{ textAlign: "center", color: "var(--gray-400)", marginTop: 32, fontSize: "0.9375rem" }}>Limited spots available. Application required.</p>
         </div>
       </section>
+      <TestimonialButton pageKey="innerCircle" />
     </>
   );
 }
