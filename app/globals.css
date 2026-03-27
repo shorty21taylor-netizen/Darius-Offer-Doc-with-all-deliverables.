@@ -183,17 +183,28 @@ footer { padding: 48px 0; border-top: 1px solid rgba(255,255,255,0.06); text-ali
 .footer-text { color: var(--gray-500); font-size: 0.875rem; }
 .footer-text a { color: var(--primary-red); text-decoration: none; }
 
-header { padding: 32px 0; border-bottom: 1px solid rgba(255,255,255,0.06); }
-.logo {
-  font-family: 'Space Grotesk', sans-serif; font-size: 1.75rem; font-weight: 700;
-  letter-spacing: -0.02em; display: flex; align-items: center; gap: 12px;
+/* ── Navbar ── */
+.nav-links-desktop {
+  display: flex;
+  align-items: center;
+  gap: 32px;
 }
-.logo-icon {
-  width: 42px; height: 42px; background: var(--gradient-red); border-radius: 10px;
-  display: flex; align-items: center; justify-content: center;
-  font-weight: 800; font-size: 1.25rem; box-shadow: 0 4px 20px var(--primary-red-glow);
+
+.nav-links-desktop a:hover {
+  color: #ffffff !important;
 }
-.logo span { color: var(--primary-red); }
+
+.nav-hamburger { display: none !important; }
+
+@keyframes navFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@media (max-width: 768px) {
+  .nav-links-desktop { display: none !important; }
+  .nav-hamburger { display: flex !important; }
+}
 
 @media (max-width: 768px) {
   .hero { padding: 60px 0; }

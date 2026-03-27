@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Navbar from "@/components/Navbar";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -23,18 +24,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <div className="glow-orb glow-orb-1" />
         <div className="glow-orb glow-orb-2" />
 
-        <header>
-          <div className="container">
-            <a href="/" style={{ textDecoration: "none", color: "inherit" }}>
-              <div className="logo">
-                <div className="logo-icon">I2I</div>
-                Influence<span>2</span>Impact
-              </div>
-            </a>
-          </div>
-        </header>
+        <Navbar />
 
-        <main>{children}</main>
+        <main style={{ paddingTop: 60 }}>{children}</main>
 
         <footer>
           <div className="container">
